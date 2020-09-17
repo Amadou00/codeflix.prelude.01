@@ -241,3 +241,46 @@ console.log("---- Exerice 9 ----");
 console.log(charAt('chopper', 0));
 console.log(charAt('chopper', 1));
 console.log("");
+
+//Exercice 10
+function first(first = '', len = 1)
+{
+	let sentence = '';
+	if (len > first.length)
+	{
+		len = first.length;
+	}
+	for (let i = 0; i < len; i++)
+	{
+		sentence += first[i];
+	}
+	return sentence;
+}
+
+console.log("---- Exerice 10 ----");
+console.log(first('chopper'));
+console.log(first('chopper', 2));
+console.log(first('tony', 5));
+console.log("");
+
+//Exercice 11
+function last(last = '', len = 1)
+{
+	let lstReverse = '';
+	let sentence = '';
+	if (len > last.length)
+	{
+		len = last.length;
+	}
+	for (let i = last.length-1; i >= 0; i--)
+	{
+		lstReverse += last.unshiftlast(i);
+
+	}
+	return sentence;
+}
+console.log("---- Exerice 11 ----");
+console.log(last('chopper'));
+console.log(last('chopper', 2));
+console.log(last('tony', 5));
+console.log("");
