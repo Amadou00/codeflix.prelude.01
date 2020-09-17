@@ -272,10 +272,15 @@ function last(last = '', len = 1)
 	{
 		len = last.length;
 	}
+	let count = len-1;
 	for (let i = last.length-1; i >= 0; i--)
 	{
-		lstReverse += last.unshiftlast(i);
-
+		lstReverse += last[i];
+	}
+	while (count >= 0)
+	{
+		sentence += lstReverse[count];
+		count--;
 	}
 	return sentence;
 }
@@ -284,3 +289,13 @@ console.log(last('chopper'));
 console.log(last('chopper', 2));
 console.log(last('tony', 5));
 console.log("");
+
+//Exercice 12
+function substr(str = '', start, len = str.endOfString)
+{
+	let sentence = '';
+	for (let i = 0; i < str.length; i++)
+	{
+		
+	}
+}
