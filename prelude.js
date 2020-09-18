@@ -294,8 +294,101 @@ console.log("");
 function substr(str = '', start, len = str.endOfString)
 {
 	let sentence = '';
-	for (let i = 0; i < str.length; i++)
+	let count = 0;
+	for (let i = start; i < str.length; i++)
+	{
+		if (len != null && count < len)
+		{
+			count++;
+			sentence += str[i];
+		}
+		else if (len == null)
+		{
+			sentence += str[i];
+		}
+	}
+	return sentence;
+}
+console.log("---- Exerice 12 ----");
+console.log(substr('tony tony chopper', 10));
+console.log(substr('ch0pper', 2, 2));
+console.log("");
+
+//Exercice 13
+function slice(slice='', start, endopt=slice.length)
+{
+	let sentence = '';
+	let lstReverse = '';
+	let tour = 1;
+	
+	if (start > 0)
+	{
+		for (let i = start; i < endopt; i++)
+		{
+			sentence += slice[i];
+			//console.log(start);
+		}
+	}
+	else 
+	{
+		start = start*-1;
+		let count = endopt;
+		for (let i = endopt-1; i >= 0; i--)
+		{
+			lstReverse += slice[i];
+		}
+		while (count != (endopt) - start)
+		{
+			sentence += lstReverse[start-tour];
+			count--;
+			tour ++;
+		}
+	}
+	return sentence;
+	
+}
+console.log("---- Exerice 13 ----");
+console.log(slice('ch0pper', 1));
+console.log(slice('ch0pper', -4));
+console.log(slice('ch0pper', 1, 4));
+console.log("");
+
+//Exercice 14
+/* C'est déja fait */
+
+//Exercice 15
+function countSubstrings(str='', substring)
+{
+	let sentence = 0;
+	let mot = str.split(' ');
+	substring = substring.split(' ');
+	let count = 0;
+
+	while (mot[count] != null)
+	{
+		if (substring == mot[count])
+		{
+			sentence += 1;
+		}
+		count++;
+	}
+	return sentence;
+}
+console.log("---- Exerice 15 ----");
+console.log(countSubstrings('Tony Tony chopper', 'Tony'));
+console.log(countSubstrings('gomu gomu no bazooka', 'gatling'));
+console.log("");
+
+//Exercice 16
+/*
+function countWords(index='', patternopt)
+{
+	let sentence = -1;
+	let present = false;
+	let i = 0;
+	
+	while (present != true && i < index.length)
 	{
 		
 	}
-}
+}*/
